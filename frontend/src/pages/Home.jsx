@@ -10,7 +10,7 @@ const Home = ({ productRef }) => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/products")
+      .get(`${import.meta.env.VITE_API_URL}/api/products`)
       .then((res) => setProducts(res.data));
   }, []);
 

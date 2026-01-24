@@ -11,7 +11,7 @@ const Cart = () => {
   const placeOrder = async () => {
     if (!cart.length) return alert("Cart is empty!");
 
-    await axios.post("http://localhost:5000/api/orders", {
+    await axios.post(`${import.meta.env.VITE_API_URL}/api/orders`, {
       products: cart,
     });
 
